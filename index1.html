@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="gb2312"/>
+	<title>Westeng</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/swiper.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/fsgallery.css" rel="stylesheet" />
+    <script src="js/swiper.js"></script>
+    <script src="js/jquery-1.9.1.js"></script>
+</head>
+<style>
+ .swiper-container .swiper-wrapper .swiper-slide img{
+    cursor: default;
+}
+</style>
+<body>
+<div class="head">
+    <img src="./product_list/westengLogo.png" alt="logo">
+</div>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide banner1">
+            <img src="./product_list/banner1.jpg" alt="banner">
+            <img src="./product_list/banner5.jpg" alt="banner">
+        </div>
+        <div class="swiper-slide banner2">
+            <img src="./product_list/banner2.jpg" alt="banner">
+            <img src="./product_list/banner3.jpg" alt="banner">
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+    <div class="container">
+        <h2>New Products</h2>
+        <ul class="thumbnails" id="gallery">
+            <li class="span3">
+                <a href="javascript:;">
+                    <img src="product_list/p6.jpg" alt="p6"/>
+                </a>
+                <div class="mask" id="6">
+                    <p></p>
+                    <div class="action">
+                        <a href="javascript:;" onclick="displayProductDetai('./product_list/p6.jpg',6)">Show more detail</a>
+                    </div>
+                </div>
+            </li>
+            <li class="span3">
+                <a href="#">
+                    <img src="product_list/p7.jpg" alt="" />
+                </a>
+                <div class="mask" id="7">
+                    <p></p>
+                    <div class="action">
+                        <a href="javascript:;" onclick="displayProductDetai('./product_list/p7.jpg',7)">Show more detail</a>
+                    </div>
+                </div>
+            </li>
+            <li class="span3">
+                <a href="product_list/p8.jpg">
+                    <img src="product_list/p8.jpg" alt="" />
+                </a>
+                <div class="mask" id="8">
+                    <p></p>
+                    <div class="action">
+                        <a href="javascript:;" onclick="displayProductDetai('./product_list/p8.jpg',8)">Show more detail</a>
+                    </div>
+                </div>
+            </li>
+            <li class="span3">
+                <a href="product_list/p5.jpg">
+                    <img src="product_list/p5.jpg" alt="" />
+                </a>
+                <div class="mask" id="5">
+                    <p></p>
+                    <div class="action">
+                        <a href="javascript:;" onclick="displayProductDetai('./product_list/p5.jpg',5)">Show more detail</a>
+                    </div>
+                </div>
+            </li>
+            <li class="span3">
+                <a href="product_list/p2.jpg">
+                    <img src="product_list/p2.jpg" alt="" />
+                </a>
+                <div class="mask" id="2">
+                    <p></p>
+                    <div class="action">
+                        <a href="javascript:;" onclick="displayProductDetai('./product_list/p2.jpg',2)">Show more detail</a>
+                    </div>
+                </div>
+            </li>
+            <li class="span3">
+                <a href="product_list/p1.jpg">
+                    <img src="product_list/p1.jpg" alt="" />
+                </a>
+                <div class="mask" id="1">
+                    <p></p>
+                    <div class="action">
+                        <a href="javascript:;" onclick="displayProductDetai('./product_list/p1.jpg',1)">Show more detail</a>
+                    </div>
+                </div>
+            </li>
+            <li class="span3">
+                <a href="product_list/p4.jpg">
+                    <img src="product_list/p4.jpg" alt="" />
+                </a>
+                <div class="mask" id="4">
+                    <p></p>
+                    <div class="action">
+                        <a href="javascript:;" onclick="displayProductDetai('./product_list/p4.jpg',4)">Show more detail</a>
+                    </div>
+                </div>
+            </li>
+            <li class="span3">
+                <a href="product_list/p9.jpg">
+                    <img src="product_list/p9.jpg" alt="" style="height: 390px"/>
+                </a>
+                <div class="mask" id="9">
+                    <p></p>
+                    <div class="action">
+                        <a href="javascript:;" onclick="displayProductDetai('./product_list/p9.jpg',9)">Show more detail</a>
+                    </div>
+                </div>
+            </li>
+            <li class="span3">
+                <a href="product_list/p3.jpg">
+                    <img src="product_list/p3.jpg" alt="" style="height: 390px"/>
+                </a>
+                <div class="mask" id="3">
+                    <p></p>
+                    <div class="action">
+                        <a href="javascript:;" onclick="displayProductDetai('./product_list/p3.jpg',3)">Show more detail</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>     
+<div style="text-align:center;clear:both">
+</div>
+<div class="footer">
+    <p>&copy;Copyright 2018 by Westeng</p>
+</div>
+<div class="mask-wrap" style="display: none;">
+    <div class="mask">
+        <div class="img-wrap"></div>
+        <div class="des">
+            <h3 class="title"></h3>
+            <ul></ul>
+        </div>
+        <div id="closeModal">
+            <span>X</span>
+        </div>
+    </div>
+</div>
+<script>
+    const productList=[
+        {id:1,title:'Westeng 1pc Vintage Elegant Women\'s Fake Half Shirt Detachable Blouse Collar with Hollow Out Design',link:'https://www.amazon.co.uk/Westeng-Vintage-Elegant-Womens-Detachable/dp/B01MA3SXHC/ref=sr_1_69?m=A3TCG4C5ANCQAW&s=merchant-items&ie=UTF8&qid=1522984794&sr=1-69',des:['Material: Cotton Blend .Colors: Black, White.','Suitable for slender women or girls','Hidden inside your casual clothes to make it looks formal.']},
+
+        {id:2,title:'Westeng Camouflage Hat Boonie Fisherman Rounded Sun Protection Hat Outdoor Climbing Jungle Men Women Tactics Cap',link:'https://www.amazon.co.uk/Westeng-Camouflage-Fisherman-Protection-Climbing/dp/B072559X6D/ref=sr_1_34?m=A3TCG4C5ANCQAW&s=merchant-items&ie=UTF8&qid=1522985051&sr=1-34',des:['Material: Cotton.','Head circumference: 54-60 CM/21.3-23.6 inch.','Adjustable chin strap ensures a secure fit. Breathable, make you more cool and comfortable.','Anti-UV sun protection, ideal for outdoor activities such as climbing, hiking, fishing, hunting, etc']},
+
+        {id:3,title:'Westeng 1pc Long-handled Bath Body Brush Back Scrubber Skin Massage Health Care Shower Back Rubbing Brush',link:'https://www.amazon.co.uk/Westeng-Long-handled-Scrubber-Massage-Rubbing/dp/B01KTGE3F2/ref=sr_1_10?m=A3TCG4C5ANCQAW&s=merchant-items&ie=UTF8&qid=1522996524&sr=1-10',des:['Material: Poly Styrene Artificial Fiber.','Improved complexion and smoother skin with regular use - wet or dry brushing.','Long handle, easy to clean the back.The handle has a convenient cord suspension.']},
+
+        {id:4,title:'Westeng Glasses Case Sunglasses Box EVA Zipper Hard Storage Box Anti-extrusion Black',link:'https://www.amazon.co.uk/Westeng-Glasses-Sunglasses-Storage-Anti-extrusion/dp/B072C34GNF/ref=sr_1_76?m=A3TCG4C5ANCQAW&s=merchant-items&ie=UTF8&qid=1522996545&sr=1-76',des:['Made of EVA material, zipper closure.','Color: Black. Size: 17 x 6 x 3.5 CM.','Hard appearance prevents your glasses from external squeeze.']},
+
+        {id:5,title:'Westeng Professional Cake Slicer Cutter Levelling Saw Blade Leveller Adjustable Stainless Steel Cake Cutting Wire',link:'https://www.amazon.co.uk/Westeng-Professional-Levelling-Adjustable-Stainless/dp/B076PBLMPS/ref=sr_1_47?m=A3TCG4C5ANCQAW&s=merchant-items&ie=UTF8&qid=1522995284&sr=1-47',des:['It is ideal for both professional and amateur bakers','High altitudes: The cutting line at high altitudes, easily layered and more maneuverable, to save your time better','Double wire: Double stainless steel cutting wire for splitting cakes evenly, quickly and simply','Height-adjustable: The height is adjustable, accroding to different height of cake, adjust the high, to meet the requirement of depth']},
+
+        {id:6,title:'westeng 1 Pcs Spray Bottle Sprinkler System Retro Old Glass Spray Bottle Watering Succulents Plants Indoors 9*16cm white',link:'https://www.amazon.co.uk/Westeng-Sprinkler-Watering-Succulents-Indoors/dp/B074SWBM1H/ref=sr_1_20?m=A3TCG4C5ANCQAW&s=merchant-items&ie=UTF8&qid=1522984762&sr=1-20',des:[' Material: Pump: PVC + Glass.','Size: Including parts of the pump: 16 cm. Watering distance: Approximately 16 to 20 cm. Weight: About 220 g.','Type: Lovely pumpkin silhouette. Spray with style. Old goods perfect for ornamental plants and the room interior.']},
+
+        {id:7,title:'Westeng 150ML Fancy Milk Stainless Steel Milk Jug Hot Milk Cup Suitable With Heat Proof Handle For Coffee, Latte Frothing Milk,1Pcs',link:'https://www.amazon.co.uk/Westeng-Stainless-Suitable-Handle-Frothing/dp/B01N5K67B7/ref=sr_1_87?m=A3TCG4C5ANCQAW&s=merchant-items&ie=UTF8&qid=1522984943&sr=1-87',des:['This Milk Jug Is Perfectly Designed For Foaming Milk, This Gadget Can Also Undoubtedly Help You With Coffee\'s Or Chocolate\'s Preparation.','Molded pouring spout and sturdy handle, no leakage when you pour your beverage.','Using High Quality Stainless Steel The Jug Is Strong, Durable And Gives A Contemporary Style That Will Complement Any Existing Kitchen Accessories.']},
+
+        {id:8,title:'Westeng 1pc Plastic Hanging Shower Basket with Hook Hanging,Bedroom Kitchen Debris Storage Basket Shampoo Holder',link:'https://www.amazon.co.uk/Westeng-Plastic-Hanging-Bedroom-Kitchen/dp/B01LCIANXC/ref=sr_1_171?m=A3TCG4C5ANCQAW&s=merchant-items&ie=UTF8&qid=1522996626&sr=1-171',des:['Made of hard plastic, solid shape and good weight capacity.','Basket to Hang in the shower,car ,space saving storage solution that will help keep your bathroom tidy and organised.','Create more storage space by hooking on other baskets: through the slots on the basement, it can be connected to another exemplar']},
+        {id:9,title:'Westeng Kids Little Girl \'s Shoulder Bag Beaded Handbag Cute Princess Package Coin Purse Velvet For Best Gift to 1-6 Years Old',link:'https://www.amazon.co.uk/Westeng-Shoulder-Handbag-Princess-Package/dp/B01N55N9SR/ref=sr_1_71?m=A3TCG4C5ANCQAW&s=merchant-items&ie=UTF8&qid=1522984794&sr=1-71',des:['Material: Man made fibers. Width of 14cm, height of about 12cm, bottom thickness of about 4CM.','A hand-held beads, a Messenger with (about 90CM, not adjustable).','Suitable for 1-6 years old little girl']},
+
+    ];
+    $(function () {
+        $('.mask p').each(function (index,el) {
+            var id=$(el).parents('.mask').attr('id');
+            var text='';
+            productList.forEach(function (val) {
+                if(val.id==id)text=val.title;
+            });
+            $(el).text(text);
+        })
+    });
+    var swiper = new Swiper('.swiper-container', {
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            loop:true,
+            autoplay: {
+                delay: 5000
+            },
+            renderBullet: function (index, className) {
+                return '<span class="' + className + '"></span>';
+            }
+        }
+    });
+    swiper.autoplay.start();
+    function closeModal() {
+        $('.mask-wrap ').removeClass('bounceIn').addClass('bounceOut');
+        setTimeout(function () {
+            $('.mask-wrap ').hide();
+        },500);
+    }
+    $('#closeModal').click(function () {
+        closeModal();
+    });
+    window.addEventListener('keydown',function (ev) {
+        if(ev.keyCode==27){
+            closeModal();
+        }
+    });
+    function displayProductDetai(src,id) {
+        $('.mask-wrap ').removeClass('bounceOut').addClass('bounceIn');
+        var wrap=$('.mask-wrap .img-wrap').empty();
+        $('.mask-wrap .des .title').text('');
+        $('.mask-wrap .des ul').empty();
+        $('<img/>').attr('src',src).appendTo(wrap);
+        $('#buyLink').attr('href','#');
+        var obj;
+        for(var i=0;i<productList.length;i++){
+            if(productList[i].id==id){
+                obj=productList[i];
+            }
+        }
+        console.log(obj);
+        if(obj){
+            $('.mask .title').text(obj.title);
+            obj.des.forEach(function (value,index) {
+                $('<li>').text(value).appendTo($('.mask .des ul'));
+            });
+            $('#buyLink').attr('href',obj.link);
+            $('.mask-wrap ').show();
+        }
+    }
+    function openUrl(id) {
+        var url='';
+        productList.forEach(function (t) {
+            if(t.id==id){
+                url=t.link;
+            }
+        });
+        if(url!=''){
+            window.open(url,'blank');
+        }
+    }
+</script>
+</body>
+</html>
